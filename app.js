@@ -242,8 +242,16 @@ Example: calculateGrade(100) should return A.
 Complete the exercise in the space below:
 */
 
-
-
+function calculateGrade(score) {
+    // assumes the score is int and between 0 and 100 inclusive
+    // a string of the possible grades, corresponding to the possible deciles
+    // multiple deciles for Fs and As
+    let grades = "FFFFFFDCBAA";
+    // the decile of the grade
+    let gradesDecile = Math.floor((score / 10));
+    // use the decile as an index
+    return grades[gradesDecile];
+};
 console.log('Exercise 10 Result:', calculateGrade(85));
 
 // --------------------------------
@@ -263,8 +271,15 @@ Example: createUsername('Samantha', 'Green') should return 'SamGre13'.
 Complete the exercise in the space below:
 */
 
-
-
+function createUsername(firstname, lastname) {
+    // get first three letters of both names
+    let firstThree = firstname.slice(0, 3);
+    let lastThree = lastname.slice(0, 3);
+    // length of the concatenated full name
+    let nChar = (firstname + lastname).length;
+    // smoosh em together
+    return firstThree + lastThree + nChar;
+};
 console.log('Exercise 11 Result:', createUsername("Samantha", "Green"));
 
 // --------------------------------
@@ -277,8 +292,11 @@ This function should return the count of arguments passed to it when called.
 Complete the exercise in the space below:
 */
 
-
-
+function numArgs() {
+    // function declaration with () still allows optional arguments to be passed
+    // JS has an arguments object for non-arrow functions. aka I won't use arrow anymore lol
+    return arguments.length;
+}
 console.log('Exercise 12 Result:', numArgs(1, 2, 3, 4));
 
 
