@@ -15,7 +15,6 @@ const maxOfTwoNumbers = (x, y) => {
       return y;
     }
 };
-  
 console.log('Exercise 1 Result:', maxOfTwoNumbers(3, 9));
 // that was easy
 
@@ -41,7 +40,6 @@ const isAdult = (age) => {
         return "Minor";
     }
 };
-
 console.log('Exercise 2 Result:', isAdult(21));
 
 
@@ -62,7 +60,7 @@ Complete the exercise in the space below:
 */
 
 const isCharAVowel = function(char) {
-    // convert to lowercase for lowercase matching
+    // assumes char is a string. convert to lowercase for lowercase matching
     if (char.toLowerCase() === ("a" || "e" || "i" || "o" || "u")) {
         return true;
     } else if (char.toLowerCase() === "y") {
@@ -71,8 +69,6 @@ const isCharAVowel = function(char) {
         return false;
     }
 };
-
-
 console.log('Exercise 3 Result:', isCharAVowel("a"));
 
 
@@ -93,8 +89,7 @@ function generateEmail(name, domain) {
     // assumes that the name and domain are valid
     // assumes that domain is propertly formatted
     return `${name}@${domain}`;
-}
-
+};
 console.log('Exercise 4 Result:', generateEmail("johnsmith", "example.com"));
 
 
@@ -111,8 +106,11 @@ Example: greetUser('Sam', 'morning') should return "Good morning, Sam!"
 Complete the exercise in the space below:
 */
 
-
-
+function greetUser(name, timeOfDay) {
+    let timeOfDayParsed = timeOfDay.toLowerCase();
+    let nameParsed = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+    return `Good ${timeOfDayParsed}, ${nameParsed}!`;
+};
 console.log('Exercise 5 Result:', greetUser("Sam", "morning"));
 
 // --------------------------------
@@ -127,8 +125,11 @@ Example: maxOfThree(17, 4, 9) should return 17.
 Complete the exercise in the space below:
 */
 
-
-
+function maxOfThree(x, y, z) {
+    // assumes x, y, and z are numbers
+    let max = Math.max(x, y, z);
+    return max;
+};
 console.log('Exercise 6 Result:', maxOfThree(5, 10, 8));
 
 
@@ -146,8 +147,10 @@ Example: calculateTip(50, 20) should return 10.
 Complete the exercise in the space below:
 */
 
-
-
+function calculateTip(billAmount, tipPercentage) {
+    // assumes billAmount and tipPercentage are numbers
+    return billAmount * (tipPercentage / 100);
+};
 console.log('Exercise 7 Result:', calculateTip(50, 20));
 
 
@@ -167,7 +170,17 @@ Complete the exercise in the space below:
 */
 
 
-
+function convertTemperature(temp, scale) {
+    // assumes temp is a number and scale is a string
+    let scaleParsed = scale.toUpperCase();
+    if (scaleParsed === "C") {
+        return (temp * 9/5) + 32;
+    } else if (scaleParsed === "F") {
+        return (temp - 32) * 5/9;
+    } else {
+        return "scale not found";
+    }
+}
 console.log('Exercise 8 Result:', convertTemperature(32, "C"));
 
 
@@ -190,10 +203,82 @@ Complete the exercise in the space below:
 */
 
 
-
+function basicCalculator(num1, num2, str) {
+    switch (str) {
+        case "add":
+            return num1 + num2;
+            break;
+        case "subtract":
+            return num1 - num2;
+            break;
+        case "multiply":
+            return num1 * num2;
+            break;
+        case "divide":
+            return num1 / num2;
+            break;
+        default:
+            return `Please choose from ('add', 'subtract', 'multiply', 'divide') instead of ${str}.`
+    }
+};
 console.log('Exercise 9 Result:', basicCalculator(10, 5, "subtract"));
 
 
 
+
+// --------------------------------
+/*
+Exercise 10: calculateGrade()
+
+Define a function called calculateGrade. 
+It should take a numerical score and return the corresponding letter 
+grade (A, B, C, D, F). 
+
+For example, 90 and above yields an 'A', 80-89 is a 'B', 
+and 70-79 is a 'C', 60-69 is a 'D' and anything lower than a 60 is an 'F'.
+
+Example: calculateGrade(100) should return A.
+
+Complete the exercise in the space below:
+*/
+
+
+
+console.log('Exercise 10 Result:', calculateGrade(85));
+
+// --------------------------------
+/*
+Exercise 11: createUsername()
+
+Define a function called createUsername. 
+It should take a first name and a last name and return a username. 
+
+The username should be a combination of the following:
+- The first three letters of the first name.
+- The first three letters of the last name.
+- The total character count of the first and last name combined.
+
+Example: createUsername('Samantha', 'Green') should return 'SamGre13'.
+
+Complete the exercise in the space below:
+*/
+
+
+
+console.log('Exercise 11 Result:', createUsername("Samantha", "Green"));
+
+// --------------------------------
+/*
+Exercise 12: numArgs()
+
+Challenge yourself with numArgs. 
+This function should return the count of arguments passed to it when called.
+
+Complete the exercise in the space below:
+*/
+
+
+
+console.log('Exercise 12 Result:', numArgs(1, 2, 3, 4));
 
 
